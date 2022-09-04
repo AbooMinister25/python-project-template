@@ -9,3 +9,5 @@ dist/
 .vscode/
 .venv/
 .env
+.pdm.toml
+.coverage
