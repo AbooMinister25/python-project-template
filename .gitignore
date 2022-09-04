@@ -11,4 +11,5 @@ dist/
 .env
 .pdm.toml
 .coverage
-.pytest_cache
+.pytest_cache/
+__pypackages__/
