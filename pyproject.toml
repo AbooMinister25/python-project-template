@@ -43,7 +43,7 @@ precommit = [
 
 [tool.pdm.scripts]
 format = { shell = "black . && isort ." }
-lint = { shell = "pyright && flake8 module_name" }
+lint = { shell = "pyright && flake8" }
 test = "pytest ."
 coverage = { shell = "coverage run -m pytest && coverage report" }
 all = { composite = ["format", "lint", "test", "coverage"] }
