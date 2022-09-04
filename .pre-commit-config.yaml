@@ -1,0 +1,23 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hook
+    rev: v2.5.0
+    hooks:
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+
+  - repo: local
+    hooks:
+      - id: format
+        name: format
+        description: This hook runs the format script defined in our PDM environment.
+        entry: pdm format
+        language: system
+        types: [python]
+        require_serial: true
+      - id: lint
+        name: lint
+        description: This hook runs the lint script defined in our PDM environment.
+        entry: pdm lint
+        language: system
+        types: [python]
+        require_serial: true
