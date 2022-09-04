@@ -16,7 +16,7 @@ repos:
       - id: lint
         name: lint
         description: This hook runs the lint script defined in our PDM environment.
-        entry: pdm run pre-commit run --all-files
+        entry: pdm lint
         language: system
         types: [python]
         require_serial: true
