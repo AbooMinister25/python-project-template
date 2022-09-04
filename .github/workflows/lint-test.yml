@@ -32,7 +32,7 @@ jobs:
         run: pdm sync
 
       - name: Run lints
-        run: flake8
+        run: pdm run flake8 && pdm run pyright
 
       - name: Run coverage and tests
         run: pdm run coverage
