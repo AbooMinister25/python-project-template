@@ -1,5 +1,2 @@
-import pytest
-
-
-def test_working():
+def test_working() -> None:
     assert True
