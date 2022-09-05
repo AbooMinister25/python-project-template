@@ -57,3 +57,8 @@ profile = "black"
 [tool.pyright]
 include = ["module_name/**/*.py"]
 strict = ["module_name/**/*.py"]
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests"
+]
