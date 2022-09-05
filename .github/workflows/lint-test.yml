@@ -32,7 +32,7 @@ jobs:
         run: pdm sync
 
       - name: Run lints
-        run: pdm run pre-commit run --all-files
+        run: pdm lint
 
       - name: Run coverage and tests
-        run: pdm run coverage
+        run: pdm coverage
