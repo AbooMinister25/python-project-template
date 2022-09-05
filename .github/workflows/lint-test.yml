@@ -36,3 +36,8 @@ jobs:
 
       - name: Run coverage and tests
         run: pdm coverage
+
+      - name: Upload coverage to CodeCov
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage.xml
