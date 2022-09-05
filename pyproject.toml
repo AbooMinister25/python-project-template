@@ -53,3 +53,7 @@ line-length = 100
 
 [tool.isort]
 profile = "black"
+
+[tool.pyright]
+include = ["module_name/**/*.py"]
+strict = ["module_name/**/*.py"]
