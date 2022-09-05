@@ -7,8 +7,6 @@
 
 This is a cool project
 
-# Getting Started
-
 ## Installation
 
 ```
