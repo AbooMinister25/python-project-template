@@ -1,0 +1,35 @@
+name: "Lint & Test"
+
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - main
+    pull_request:
+
+jobs:
+    lint_test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Checkout repository"
+              uses: actions/checkout@v4
+
+            - name: "Setup uv"
+              uses: astral-sh/setup-uv@v4
+              with:
+                  python-version: "3.12"
+                  cache: true
+
+            - name: "Set up Python"
+              uses: actions/setup-python@v5
+              with:
+                  python-version-file: ".python-version"
+
+            - name: "Install project"
+              run: uv sync --all-extras --dev
+
+            - name: "Run precommit"
+              run: uv run task precommit
+
+            - name: "Run tests"
+              run: uv run task test

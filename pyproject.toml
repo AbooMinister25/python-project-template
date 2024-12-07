@@ -1,0 +1,43 @@
+[project]
+name = "python-project-template"
+version = "0.1.0"
+description = "Add your description here"
+authors = [{ name = "Rayyan Cyclegar", email = "aboominister@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "coverage>=7.6.9",
+    "ipython>=8.30.0",
+    "pre-commit>=4.0.1",
+    "pyright>=1.1.390",
+    "pytest>=8.3.4",
+    "ruff>=0.8.2",
+    "taskipy>=1.14.1",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+ignore = ["E203", "D100", "D103"]
+
+[tool.pyright]
+include = ["module_name/**/*.py"]
+strict = ["module_name/**/*.py"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = false
+omit = ["__pypackages__/*"]
+
+[tool.taskipy.tasks]
+format = "ruff format"
+lint = "pyright; ruff check ."
+test = "pytest"
+coverage = "coverage run -m pytest && coverage report && coverage xml"
+precommit = "pre-commit run --all-files"
