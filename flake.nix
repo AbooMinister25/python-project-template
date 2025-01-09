@@ -26,6 +26,12 @@
           );
           runScript = "fish";
         }).env;
+
+        templates = {
+          default = {
+            path = ./.;
+          };
+        };
       }
     );
 }
